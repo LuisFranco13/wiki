@@ -1,0 +1,23 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    {{ title }}
+{% endblock %}
+
+{% block body %}
+
+<h1> {{title}} </h1>
+<div>
+    <!-- Renderiza el contenido de la entrada sin escapar el HTML -->
+    {{ entry | safe }}
+</div>
+    
+    <a href="{% url 'edit_entry' title %}">Change the content of {{title}}.</a>
+   
+{% endblock %}
+
+
+
+
+
+

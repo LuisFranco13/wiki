@@ -1,0 +1,21 @@
+{% extends 'encyclopedia/layout.html' %}
+
+
+{% block title %}
+    Change content.
+{% endblock %}
+
+{% block body %}
+    <h1>Edit content of {{title}}.</h1>
+
+    <form action= "{% url 'edit_entry' title %}" method="post">
+        {% csrf_token %}
+        {{form.as_p}}  <!-- Esto renderiza automáticamente los campos del formulario -->
+        <button type="submit" class="btn btn-primary">Save changes.</button>
+    </form>
+    <a href="{% url 'get_entry' title %}">Cancel</a>
+{% endblock %}
+
+
+
+
